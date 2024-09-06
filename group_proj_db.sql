@@ -246,6 +246,105 @@ VALUES
   (6543210987, 10);
 
 
+-- Populate Panel with Random Members
+INSERT INTO panel (ph_no, name, experience, association)
+VALUES
+  (1111111111, 'Panelist 1', '10 years', 'Music Industry Association'),
+  (2222222222, 'Panelist 2', '8 years', 'Music Critics Association'),
+  (3333333333, 'Panelist 3', '12 years', 'McM Company'),
+  (4444444444, 'Panelist 4', '5 years', 'Music Academy'),
+  (5555555555, 'Panelist 5', '7 years', 'Record Label');
+
+-- Populate Album with Random Data
+INSERT INTO album (al_id, price, album_type, gp_id, album_name, trailer_link, release_date, like_count, dislike_count, visits)
+VALUES
+  (1, 199.99, 'audio', 1, 'Pop Sensation', 'pop_trailer_link', '2020-03-01', 1000, 50, 5000),
+  (2, 249.99, 'video', 2, 'Classic Harmony', 'classic_trailer_link', '2020-03-15', 1200, 30, 6000),
+  (3, 179.99, 'audio', 3, 'Leisure Groove', 'leisure_trailer_link', '2024-04-01', 800, 20, 4000),
+  (4, 299.99, 'video', 3, 'Evergreen Beats', 'evergreen_trailer_link', '2024-04-15', 1500, 70, 7000),
+  (5, 209.99, 'audio', 5, 'Rock Fusion', 'rock_trailer_link', '2024-05-01', 1100, 40, 5500),
+  (6, 189.99, 'video', 6, 'Jazz Groove', 'jazz_trailer_link', '2024-05-15', 900, 60, 6500),
+  (7, 219.99, 'audio', 7, 'Country Melodies', 'country_trailer_link', '2024-06-01', 1300, 35, 7500),
+  (8, 259.99, 'video', 8, 'R&B Sensation', 'rnb_trailer_link', '2024-06-15', 1400, 45, 8000),
+  (9, 169.99, 'audio', 9, 'Hip Hop Beats', 'hiphop_trailer_link', '2024-07-01', 950, 25, 6000),
+  (10, 289.99, 'video', 10, 'Reggae Vibes', 'reggae_trailer_link', '2024-07-15', 1600, 55, 8500);
+
+-- Populate Distributor with Random Data
+INSERT INTO distributor (db_id, buy_price, sell_price)
+VALUES
+  (1, 150.00, 199.99),
+  (2, 180.00, 249.99),
+  (3, 130.00, 179.99),
+  (4, 250.00, 299.99),
+  (5, 190.00, 209.99),
+  (6, 170.00, 189.99),
+  (7, 200.00, 219.99),
+  (8, 230.00, 259.99),
+  (9, 160.00, 169.99),
+  (10, 270.00, 289.99);
+
+-- Populate Download with Random Data
+INSERT INTO download (download_id, incoming_url, al_id, date, download_status)
+VALUES
+  (1, 'download_url_1', 1, '2024-05-02', 'success'),
+  (2, 'download_url_2', 2, '2024-05-03', 'success'),
+  (3, 'download_url_3', 3, '2024-05-04', 'failure'),
+  (4, 'download_url_4', 4, '2024-05-05', 'success'),
+  (5, 'download_url_5', 5, '2024-05-06', 'success'),
+  (6, 'download_url_6', 6, '2024-05-07', 'success'),
+  (7, 'download_url_7', 7, '2024-05-08', 'failure'),
+  (8, 'download_url_8', 8, '2024-05-09', 'success'),
+  (9, 'download_url_9', 9, '2024-05-10', 'success'),
+  (10, 'download_url_10', 10, '2024-05-11', 'success');
+
+-- Populate Incoming URL Map with Random Data
+INSERT INTO incoming_url_map (incoming_url, al_id, db_id, download_count)
+VALUES
+  ('download_url_1', 1, 1, 500),
+  ('download_url_2', 2, 2, 600),
+  ('download_url_3', 3, 3, 400),
+  ('download_url_4', 4, 4, 700),
+  ('download_url_5', 5, 5, 800),
+  ('download_url_6', 6, 6, 550),
+  ('download_url_7', 7, 7, 350),
+  ('download_url_8', 8, 8, 750),
+  ('download_url_9', 9, 9, 850),
+  ('download_url_10', 10, 10, 900);
+
+-- Populate Alternative Numbers with Random Data
+INSERT INTO alt_nos (alt_no, ph_no)
+VALUES
+  (9999999999, 9876543210),
+  (8888888888, 8765432109),
+  (7777777777, 7654321098),
+  (6666666666, 6543210987),
+  (5555555555, 5432109876),
+  (4444444444, 4567890123),
+  (3333333333, 3456789012),
+  (2222222222, 2345678901),
+  (1111111111, 1234567890),
+  (2222222223, 2345678902),
+  (3333333334, 3456789123),
+  (4444444445, 4567891234),
+  (5555555556, 5678912345),
+  (6666666667, 6789123456),
+  (7777777778, 7891234567),
+  (8888888889, 8912345678),
+  (9999999990, 9123456789),
+  (1234567891, 9876543211),
+  (2345678903, 8765432100),
+  (3456789013, 7654321090),
+  (4567890124, 6543210980),
+  (5678912346, 5432109870),
+  (6789123457, 4321098765),
+  (7891234568, 3210987654),
+  (8912345679, 2109876543),
+  (9123456780, 1098765432),
+  (9988776656, 9988776655),
+  (8877665545, 8877665544),
+  (7766554434, 7766554433);
+
+
 
 -- QUERIES --------------------------------------------------------------------
   
@@ -258,3 +357,28 @@ HAVING COUNT(sfg.gp_id) > 1;
   
 select album_name from album 
 where album_type="audio" and year(release_date)="2020";
+  
+
+
+SELECT c.name
+FROM candidates c
+INNER JOIN selected_for_grps sfg ON c.ph_no = sfg.ph_no
+INNER JOIN grps g ON sfg.gp_id = g.gp_id
+WHERE g.genre = 'Pop'
+AND c.ph_no NOT IN (SELECT ph_no FROM selected_for_grps WHERE gp_id <> g.gp_id);
+
+
+SELECT c.name
+FROM candidates c
+JOIN media_Table m ON c.ph_no = m.ph_no
+GROUP BY c.ph_no
+HAVING COUNT(DISTINCT m.type) > 1;
+
+
+
+SELECT ch.name AS channel_name, COUNT(s.ph_no) AS submission_count
+FROM channels ch
+LEFT JOIN submission s ON ch.channel_id = s.channel_id
+GROUP BY ch.name
+ORDER BY submission_count DESC
+LIMIT 1;
