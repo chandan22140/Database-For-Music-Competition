@@ -258,6 +258,3 @@ HAVING COUNT(sfg.gp_id) > 1;
   
 select album_name from album 
 where album_type="audio" and year(release_date)="2020";
-  
-
-
